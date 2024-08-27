@@ -1,6 +1,9 @@
 import Image from "next/image";
+import { signIn } from "@/auth";
 
-export default function Home() {
+import { Input } from "@/components/ui/input";
+
+export default function Home() {  
   return (
     <main className="flex min-h-screen flex-col items-center justify-between p-24">
       <div className="z-10 w-full max-w-5xl items-center justify-between font-mono text-sm lg:flex">
@@ -107,6 +110,29 @@ export default function Home() {
             Instantly deploy your Next.js site to a shareable URL with Vercel.
           </p>
         </a>
+      </div>
+      
+      <div className="flex flex-col items-center justify-center">
+        <form
+          action={async () => {
+            "use server"
+            await signIn("github")
+          }}
+        >
+          <button type="submit">Signin with GitHub</button>
+        </form>
+        <form
+          action={async (formData) => {
+            "use server"
+            await signIn("resend", formData)
+          }}
+          className="flex flex-row items-center justify-center"
+        >
+          <Input type="text" name="email" placeholder="Email" />
+          <button type="submit" className="flex-shrink-0 p-2">
+            Sign in with Email
+          </button>
+        </form>
       </div>
     </main>
   );
