@@ -2,6 +2,7 @@ import Image from "next/image";
 import { signIn } from "@/auth";
 
 import { Input } from "@/components/ui/input";
+import User from "@/components/UserClient";
 
 export default function Home() {  
   return (
@@ -134,6 +135,8 @@ export default function Home() {
           </button>
         </form>
       </div>
+
+      <User />
     </main>
   );
 }
