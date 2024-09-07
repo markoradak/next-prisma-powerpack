@@ -1,0 +1,1 @@
+export { signIn } from "next-auth/webauthn"

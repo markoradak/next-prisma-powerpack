@@ -3,6 +3,7 @@ import { signIn } from "@/auth";
 
 import { Input } from "@/components/ui/input";
 import User from "@/components/UserClient";
+import Passkey from "@/components/Passkey";
 
 export default function Home() {  
   return (
@@ -137,6 +138,8 @@ export default function Home() {
       </div>
 
       <User />
+
+      <Passkey />
     </main>
   );
 }

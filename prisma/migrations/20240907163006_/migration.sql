@@ -50,6 +50,7 @@ CREATE TABLE "VerificationToken" (
 
 -- CreateTable
 CREATE TABLE "Authenticator" (
+    "id" TEXT NOT NULL,
     "credentialID" TEXT NOT NULL,
     "userId" TEXT NOT NULL,
     "providerAccountId" TEXT NOT NULL,
@@ -59,7 +60,7 @@ CREATE TABLE "Authenticator" (
     "credentialBackedUp" BOOLEAN NOT NULL,
     "transports" TEXT,
 
-    CONSTRAINT "Authenticator_pkey" PRIMARY KEY ("userId","credentialID")
+    CONSTRAINT "Authenticator_pkey" PRIMARY KEY ("id")
 );
 
 -- CreateIndex
