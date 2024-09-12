@@ -2,6 +2,7 @@
 
 import { useSession, signOut } from "@/auth/client"
 
+
 export default function MyComponent() {
   const { data: session, status } = useSession();
 
